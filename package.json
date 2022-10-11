@@ -1,0 +1,25 @@
+{
+    "name": "dev.torosyan.browserwindow",
+    "version": "1.0.0",
+    "displayName": "Browser Window",
+    "description": "Library for opening Chrome custom tabs from Unity.",
+    "unity": "2020.3",
+    "license":"MIT",
+    "keywords": [
+        "mobile",
+        "web",
+        "android",
+        "chrome"
+    ],
+    "author": {
+        "name": "Narek",
+        "url": "https://www.github.com/githubcatw"
+    },
+    "samples": [
+        {
+            "displayName": "Basic Sample",
+            "description": "Example of how to use Browser Window.",
+            "path": "Samples~/BWSample"
+        }
+    ]
+}
