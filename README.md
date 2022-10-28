@@ -13,7 +13,7 @@ BrowserWindow.Open(repo);
 ## FAQ
 
 ### Q: What platforms are supported?
-A. Currently the library only supports custom windows on Android, and calls Unity's `Application.OpenURL` method on other platforms. iOS support is planned.
+A. Currently the library only supports custom windows on Android, and calls Unity's `Application.OpenURL` method on other platforms. iOS `SFSafariViewController` support is planned.
 
 ### Q: When using ProGuard there is a missing plugin error!
 A. Enable the custom proguard-user file if it's off, and add this to `Plugins/Android/proguard-user.txt`:
