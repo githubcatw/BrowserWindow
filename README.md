@@ -13,13 +13,13 @@ BrowserWindow.Open(repo);
 ## Customization
 Browser windows can be customized, with different settings depending on the platform. For this an object with the class `BrowserWindow` needs to be created, as well as a platform-specific configuration.
 
-Here's an example for changing colors of Chrome custom tabs on Android:
+Here's an example for changing colors of Chrome custom tabs on Android
 ```c#
-// Create a config
+// Create an Android configuration
 BWAndroidConfig androidConfig = new BWAndroidConfig();
 // Set the color of the window to blue
 androidConfig.SetColor(Color.blue);
-// Create a BrowserWindow instance and pass the config
+// Create a BrowserWindow object and set the Android config
 BrowserWindow window = new BrowserWindow();
 window.SetAndroidConfig(androidConfig);
 ```
@@ -29,6 +29,8 @@ After that it's as simple as calling `CustomOpen` on the object to open a URL wi
 string repo = "https://github.com/githubcatw/BrowserWindow";
 window.CustomOpen(repo);
 ```
+
+In this example, the code above will launch a blue custom tab pointing to this repository on Android, and a regular browser window on other platforms.
 
 ## FAQ
 
