@@ -13,7 +13,7 @@ BrowserWindow.Open(repo);
 ## Customization
 Browser windows can be customized, with different settings depending on the platform. For this an object with the class `BrowserWindow` needs to be created, as well as a platform-specific configuration.
 
-Here's an example for changing colors of Chrome custom tabs on Android
+Here's an example for changing colors of Chrome custom tabs on Android:
 ```c#
 // Create an Android configuration
 BWAndroidConfig androidConfig = new BWAndroidConfig();
