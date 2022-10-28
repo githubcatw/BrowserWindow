@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace NT.BrowserWindow.Android {
+namespace NT.Android {
     public class BWAndroidConfig : BWPlatformConfig {
         
         public string ColorCode { get; private set; }
