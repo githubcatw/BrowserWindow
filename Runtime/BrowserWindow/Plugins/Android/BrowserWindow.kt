@@ -9,7 +9,11 @@ import androidx.browser.customtabs.CustomTabsIntent.COLOR_SCHEME_SYSTEM
 
 class BrowserWindow {
 
-    fun OpenWindow(url: String, context: Context, config: BWCustomConfiguration? = null) {
+    fun OpenWindow(url: String, context: Context) {
+        // TODO open webview when no chrome
+        OpenCct(url, context, null)
+    }
+    fun OpenWindow(url: String, context: Context, config: BWCustomConfiguration?) {
         // TODO open webview when no chrome
         OpenCct(url, context, config)
     }
@@ -24,7 +28,7 @@ class BrowserWindow {
                 val colorScheme: CustomTabColorSchemeParams = CustomTabColorSchemeParams.Builder()
                     .setToolbarColor(Color.parseColor(config.colorCode))
                     .build()
-                builder.setColorSchemeParams(COLOR_SCHEME_SYSTEM, colorScheme)
+                builder.setDefaultColorSchemeParams(colorScheme)
             }
         }
         // animation for enter and exit of tab

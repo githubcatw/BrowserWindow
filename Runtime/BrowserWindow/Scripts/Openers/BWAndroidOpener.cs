@@ -12,22 +12,23 @@ namespace NT.Android {
             AndroidJavaObject unityActivity = unityPlayerClass.GetStatic<AndroidJavaObject>("currentActivity");
             // Retrieve the class from our native plugin
             AndroidJavaObject native = new AndroidJavaObject("dev.torosyan.BrowserWindow");
-            // If we have a config, apply it
+            // If we have a config, apply it and call the native function
             if (config != null) {
-                ApplyConfig(config, native);
+                AndroidJavaObject nativeConfig = CreateNativeConfig(config);
+                native.Call("OpenWindow", url, unityActivity, nativeConfig);
             }
             // Call the plugin with the URL
-            var args = new object[] {
-                url,
-                unityActivity
-            };
-            native.Call("OpenWindow", args);
+            else native.Call("OpenWindow", url, unityActivity);
         }
 
-        private static void ApplyConfig(BWAndroidConfig config, AndroidJavaObject native) {
-            if (config.ColorCode != "") {
-                native.Call("SetColorCode", config.ColorCode);
-            }
+        private static AndroidJavaObject CreateNativeConfig(BWAndroidConfig config) {
+            // Retrieve the class from our native plugin
+            AndroidJavaObject nativeConfig = new AndroidJavaObject("dev.torosyan.BWCustomConfiguration");
+            // Set color code
+            if (config.ColorCode != null)
+                nativeConfig.Call("SetColorCode", config.ColorCode);
+            // Return the resulting config
+            return nativeConfig;
         }
     }
 }
