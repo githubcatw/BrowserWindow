@@ -50,17 +50,17 @@ namespace NT {
         /// <param name="url">The URL to open.</param>
 #if UNITY_EDITOR
         // Editor - open the URL in a standard browser
-        public static void CustomOpen(string url) {
+        public void CustomOpen(string url) {
             Application.OpenURL(url);
         }
 #elif UNITY_ANDROID
         // Android - open Chrome custom tab
-        public static void CustomOpen(string url) {
+        public void CustomOpen(string url) {
             BWAndroidOpener.Open(url, AndroidConfig);
         }
 #else
         // Default to opening the URL in a standard browser
-        public static void CustomOpen(string url) {
+        public void CustomOpen(string url) {
             Application.OpenURL(url);
         }
 #endif
