@@ -3,7 +3,7 @@
 		<repositories>
 			<repository>https://repo.maven.apache.org/maven2</repository>
 		</repositories>
-		<androidPackage spec="androidx.browser:browser:1.4.0" />
+		<androidPackage spec="androidx.browser:browser:1.5.0" />
 	</androidPackages>
 
     <iosPods>
