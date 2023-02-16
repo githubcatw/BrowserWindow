@@ -60,14 +60,14 @@ namespace NT {
             Application.OpenURL(url);
         }
 #elif UNITY_ANDROID
-        // Android - open Chrome custom tab
+        // Android - open Chrome custom tab with Android config
         public void CustomOpen(string url) {
             BWAndroidOpener.Open(url, AndroidConfig);
         }
 #else
-        // Default to opening the URL in a standard browser
+        // Default to Open() with no parameters
         public void CustomOpen(string url) {
-            Application.OpenURL(url);
+            Open(url);
         }
 #endif
         #endregion
