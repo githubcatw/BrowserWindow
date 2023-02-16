@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using NT.Android;
+using NT.iOS;
 
 namespace NT {
     /// <summary>
@@ -15,6 +16,11 @@ namespace NT {
         // Editor - open the URL in a standard browser
         public static void Open(string url) {
             Application.OpenURL(url);
+        }
+#elif UNITY_IPHONE
+        // iOS - use SKSafariViewController
+        public static void Open(string url) {
+            BWiOSOpener.Open(url);
         }
 #elif UNITY_ANDROID
         // Android - open Chrome custom tab
