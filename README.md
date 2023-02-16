@@ -35,7 +35,10 @@ In this example, the code above will launch a blue custom tab pointing to this r
 ## FAQ
 
 ### Q: What platforms are supported?
-A. Currently the library only supports custom windows on Android, and calls Unity's `Application.OpenURL` method on other platforms. iOS `SFSafariViewController` support is planned.
+A. Currently the library supports:
+- Chrome custom tabs on Android,
+- `SFSafariViewController` on iOS,
+- Unity's `Application.OpenURL` method on other platforms.
 
 ### Q: When using ProGuard there is a missing plugin error!
 A. Enable the custom proguard-user file if it's off, and add this to `Plugins/Android/proguard-user.txt`:
