@@ -30,6 +30,9 @@ class BrowserWindow {
                     .build()
                 builder.setDefaultColorSchemeParams(colorScheme)
             }
+            if (config.noShare) {
+                builder.setShareState(CustomTabsIntent.SHARE_STATE_OFF)
+            }
         }
         // animation for enter and exit of tab
         builder.setStartAnimations(context, android.R.anim.fade_in, android.R.anim.fade_out)
@@ -40,8 +43,12 @@ class BrowserWindow {
 
 class BWCustomConfiguration {
     var colorCode: String = ""
+    var noShare: Boolean = false
 
     fun SetColorCode(color: String) {
         colorCode = color
+    }
+    fun DisableSharing() {
+        noShare = true
     }
 }

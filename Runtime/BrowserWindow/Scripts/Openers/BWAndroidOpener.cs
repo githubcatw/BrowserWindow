@@ -27,6 +27,9 @@ namespace NT.Android {
             // Set color code
             if (config.ColorCode != null)
                 nativeConfig.Call("SetColorCode", config.ColorCode);
+            // Set no sharing flag
+            if (config.NoSharing)
+                nativeConfig.Call("DisableSharing");
             // Return the resulting config
             return nativeConfig;
         }
