@@ -4,9 +4,14 @@ namespace NT.iOS {
     public class BWiOSOpener {
         [DllImport("__Internal")]
         private static extern void _openBW(string url);
+        [DllImport("__Internal")]
+        private static extern void _closeBW();
 
         public static void Open(string url) {
             _openBW(url);
+        }
+        public static void Close() {
+            _closeBW();
         }
     }
 }

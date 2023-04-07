@@ -35,6 +35,28 @@ namespace NT {
 #endif
         #endregion
 
+        #region Close
+        /// <summary>
+        /// If a browser window is open, close it.
+        /// </summary>
+#if UNITY_EDITOR
+        // Editor is unsupported
+        public static void Close() {
+            Debug.LogWarning("BrowserWindow.Close() is unsupported in the Editor.");
+        }
+#elif UNITY_IPHONE
+        // iOS - use SKSafariViewController
+        public static void Close() {
+            BWiOSOpener.Close();
+        }
+#else
+        // Any other platform is unsupported
+        public static void Close() {
+            Debug.LogError("BrowserWindow.Close() is unsupported on this platform.");
+        }
+#endif
+        #endregion
+
         #region Setting a custom configuration
         /// <summary>
         /// The configuration for Android custom tabs.
