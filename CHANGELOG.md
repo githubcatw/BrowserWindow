@@ -1,4 +1,26 @@
-## 1.1
+# 1.2
+This is a minor feature release for Browser Window.
+
+## Closing browser windows
+On some platforms, like iOS, apps have to manually tell the OS to close a browser window. This update adds a way to do this in Unity with the `BrowserWindow.Close()` method.
+
+This currently works on iOS only.
+
+## Android specific changes
+### Disabling the Share button
+Chrome custom tabs open with a share button by default. To prevent this, use `BWAndroidConfig.DisableSharing()`. Pretty simple.
+
+### Animations
+The transitions between a browser window and the game can now be changed using new methods in `BWAndroidConfig`: `SetAnimations`, `SetStartAnimation` and `SetExitAnimation`.
+
+For this feature a `BWAndroidAnimation` class has been added. The library also comes with 2 preset animations:
+| <img alt="A GIF showing a Chrome window with example.com fading in" src="https://raw.githubusercontent.com/githubcatw/BrowserWindow/dev/DocumentationAssets/animation_fade.gif" width="300px"/> | <img alt="A GIF showing a Chrome window with example.com sliding in" src="https://raw.githubusercontent.com/githubcatw/BrowserWindow/dev/DocumentationAssets/animation_slide.gif" width="300px"/> |
+| --- | --- |
+| `BWAndroidAnimations.Fade` | `BWAndroidAnimations.SlideLeft` |
+
+For more information see the [documentation](https://github.com/githubcatw/BrowserWindow/wiki/Android-platform-specific-customization#bwandroidconfigsetanimationsbwandroidanimations-bwandroidanimations).
+
+# 1.1
 This is a feature release for Browser Window, featuring some improvements:
 ### Full iOS support
 iOS `SKSafariViewController` is now supported. This means that, instead of just opening Safari, Browser Window will now show a custom window on iOS:
@@ -33,5 +55,5 @@ window.CustomOpen("https://example.com");
 
 Currently this is only supported on Android. To learn more and see more detailed examples and what settings are supported please read the [wiki page](https://github.com/githubcatw/BrowserWindow/wiki/Platform-specific-customization) on this feature.
 
-## 1.0
+# 1.0
 - Initial release. 
