@@ -27,6 +27,14 @@ namespace NT.Android {
             // Set color code
             if (config.ColorCode != null)
                 nativeConfig.Call("SetColorCode", config.ColorCode);
+            // Set no sharing flag
+            if (config.NoSharing)
+                nativeConfig.Call("DisableSharing");
+            // Set anims
+            if (config.StartAnim != null)
+                nativeConfig.Call("SetStartAnimations", config.StartAnim.EntranceID, config.StartAnim.ExitID);
+            if (config.ExitAnim != null)
+                nativeConfig.Call("SetExitAnimations", config.ExitAnim.EntranceID, config.ExitAnim.ExitID);
             // Return the resulting config
             return nativeConfig;
         }

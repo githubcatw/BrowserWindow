@@ -1,5 +1,5 @@
 // BrowserWindow iOS plugin Obj-C bridge
-// (c) 2022 Narek
+// (c) 2022-2023 Narek
 
 #import <Foundation/Foundation.h>
 #include "UnityFramework/UnityFramework-Swift.h"
@@ -23,5 +23,9 @@ extern "C" {
         UIViewController * uvc = UnityGetGLViewController();
         // Call Swift side
         [[BrowserWindow shared] OpenWindowWithUrl:CreateNSString(url) vc:uvc];
+    }
+
+    void _closeBW() {
+        [[BrowserWindow shared] CloseWindow];
     }
 }

@@ -9,12 +9,14 @@ namespace NT.Samples {
         public Button OpenButton;
         public Button AdvancedSettingsOpener;
         public Button OpenColoredButton;
+        public Button OpenSlideButton;
 
         void Start() {
             // Add some listeners
             URLField.onValueChanged.AddListener(InputValueChanged);
             OpenButton.onClick.AddListener(Open);
             OpenColoredButton.onClick.AddListener(OpenColored);
+            OpenSlideButton.onClick.AddListener(OpenSlide);
         }
 
         // This is the main function that calls BrowserWindow.
@@ -43,6 +45,25 @@ namespace NT.Samples {
             // Create a config
             BWAndroidConfig androidConfig = new BWAndroidConfig();
             androidConfig.SetColor(Color.blue);
+            // Create a BrowserWindow instance
+            BrowserWindow window = new BrowserWindow();
+            window.SetAndroidConfig(androidConfig);
+            // Open browser window
+            window.CustomOpen(url);
+        }
+
+        // This is a function that calls BrowserWindow with a config
+        // telling it that the window has to slide in from the left.
+        void OpenSlide() {
+            // Get the text
+            string url = URLField.text;
+            // If there is no "http" in the start, add it
+            if (!url.StartsWith("http")) url = "http://" + url;
+            // Create a config
+            BWAndroidConfig androidConfig = new BWAndroidConfig();
+            // Set the animations
+            androidConfig.SetStartAnimations(BWAndroidAnimations.SlideLeft);
+            androidConfig.SetExitAnimations(BWAndroidAnimations.SlideLeft);
             // Create a BrowserWindow instance
             BrowserWindow window = new BrowserWindow();
             window.SetAndroidConfig(androidConfig);
