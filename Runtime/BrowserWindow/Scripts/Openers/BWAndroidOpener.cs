@@ -5,6 +5,7 @@ using UnityEngine;
 
 namespace NT.Android {
     public class BWAndroidOpener {
+#if UNITY_ANDROID
         public static void Open(string url, BWAndroidConfig config = null) {
             // Retrieve the UnityPlayer class
             AndroidJavaClass unityPlayerClass = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
@@ -38,5 +39,6 @@ namespace NT.Android {
             // Return the resulting config
             return nativeConfig;
         }
+#endif
     }
 }
