@@ -1,3 +1,20 @@
+# 1.2.1
+This is an important bug fix release.
+
+## General
+Platform specific openers are now only compiled on their respective platforms.
+
+This fixes an issue on Android where IL2CPP builds will fail with an "undefined reference" error like this:
+```
+Building Library\Bee\artifacts\Android\iz17e\libil2cpp.so failed with output:
+(project)/Library/Bee/artifacts/Android/il2cppOutput/cpp/NT.BrowserWindow.cpp:443: error: undefined reference to '_openBW'
+(project)/Library/Bee/artifacts/Android/il2cppOutput/cpp/NT.BrowserWindow.cpp:456: error: undefined reference to '_closeBW'
+(project)/Library/Bee/artifacts/Android/il2cppOutput/cpp/NT.BrowserWindow.cpp:443: error: undefined reference to '_openBW'
+(project)/Library/Bee/artifacts/Android/il2cppOutput/cpp/NT.BrowserWindow.cpp:456: error: undefined reference to '_closeBW'
+clang++: error: linker command failed with exit code 1 (use -v to see invocation)
+UnityEngine.GUIUtility:ProcessEvent (int,intptr,bool&)
+```
+
 # 1.2
 This is a minor feature release for Browser Window.
 
