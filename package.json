@@ -1,6 +1,6 @@
 {
     "name": "dev.torosyan.browserwindow",
-    "version": "1.2.0",
+    "version": "1.2.1",
     "displayName": "Browser Window",
     "description": "Library for opening Chrome custom tabs from Unity.",
     "unity": "2020.3",

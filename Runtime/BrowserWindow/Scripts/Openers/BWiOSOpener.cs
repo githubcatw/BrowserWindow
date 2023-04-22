@@ -2,6 +2,7 @@ using System.Runtime.InteropServices;
 
 namespace NT.iOS {
     public class BWiOSOpener {
+#if UNITY_IPHONE
         [DllImport("__Internal")]
         private static extern void _openBW(string url);
         [DllImport("__Internal")]
@@ -13,5 +14,6 @@ namespace NT.iOS {
         public static void Close() {
             _closeBW();
         }
+#endif
     }
 }
