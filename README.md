@@ -52,5 +52,5 @@ A. Enable the custom proguard-user file if it's off, and add this to `Plugins/An
 -keep public class dev.torosyan.** { *; }
 ```
 
-## Q. Are there any licensing restrictions?
+### Q. Are there any licensing restrictions?
 A. Browser Window is licensed under the MIT license, meaning that you can use it in a closed source project. If you make changes and think that other developers might like them too, feel free to contribute.
