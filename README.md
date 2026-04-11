@@ -12,10 +12,10 @@ Simply call `BrowserWindow.Open` to open a URL:
 string repo = "https://github.com/githubcatw/BrowserWindow";
 BrowserWindow.Open(repo);
 ```
-You can also check out the [wiki](https://github.com/githubcatw/BrowserWindow/wiki) for full documentation. If you prefer learning by example or want to look at an example of usage check out the [Basic Sample](https://github.com/githubcatw/BrowserWindow/tree/main/Samples~/BWSample) provided with the package.
+You can also check out the [wiki](https://github.com/githubcatw/BrowserWindow/wiki) for full documentation. If you prefer learning by example or want to look at an example of usage check out the [Basic Sample](https://github.com/githubcatw/BrowserWindow/tree/main/Samples~/BWSample) provided with the package. This package can also be imported into your Unity project.
 
 ### Customization
-Browser windows can be customized, with different settings depending on the platform. For this an object with the class `BrowserWindow` needs to be created, as well as a platform-specific configuration.
+Browser windows can be customized with different settings depending on the platform. For this an object with the class `BrowserWindow` needs to be created, as well as a platform-specific configuration.
 
 Here's an example for changing colors of Chrome custom tabs on Android:
 ```c#
